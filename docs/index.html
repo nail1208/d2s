@@ -57,6 +57,9 @@
               </fieldset>
               <div id="errors">
               </div>
+              <button type="button" id="unlockNormalA3" class="btn btn-primary">解锁普通难度A3</button>
+<!--               <button type="button" id="unlockNmA3" class="btn btn-primary">Unlock Nightmare A3</button>
+              <button type="button" id="unlockHellA3" class="btn btn-primary">Unlock Hell A3</button> -->
               <button type="button" id="unlockHell" class="btn btn-primary">Unlock Hell</button>
               <button type="button" id="unlockAllWPs" class="btn btn-primary">Unlock All WPs</button>
               <button type="button" id="set99" class="btn btn-primary">Set Level 99</button>
@@ -150,6 +153,24 @@
       }
     }
 
+    document.querySelector("#unlockNormalA3").onclick = async function(e) {
+      let z = editor.get();
+      z.header.waypoints["normal"]["act_iii"]["kurast_docks"] = true;
+      editor.set(z);
+    }
+    
+    document.querySelector("#unlockNmA3").onclick = async function(e) {
+      let z = editor.get();
+      z.header.waypoints["nm"]["act_iii"]["kurast_docks"] = true;
+      editor.set(z);
+    }
+    
+    document.querySelector("#unlockHellA3").onclick = async function(e) {
+      let z = editor.get();
+      z.header.waypoints["hell"]["act_iii"]["kurast_docks"] = true;
+      editor.set(z);
+    }
+    
     document.querySelector("#unlockHell").onclick = async function(e) {
       let z = editor.get();
       z.header.progression = 15;
